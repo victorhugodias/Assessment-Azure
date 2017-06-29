@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://localhost:50115/v1" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://localhost:50115/v1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://localhost:50115/v1/Imports">
+      <xsd:import schemaLocation="http://localhost:50115/Produto.svc?xsd=xsd0" namespace="http://localhost:50115/v1" />
+      <xsd:import schemaLocation="http://localhost:50115/Produto.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50115/Produto.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/GerenciarProduto.Modelo" />
+      <xsd:import schemaLocation="http://localhost:50115/Produto.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/DomainLoja" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Produtos_AdicionarNaFila_InputMessage">
+    <wsdl:part name="parameters" element="tns:AdicionarNaFila" />
+  </wsdl:message>
+  <wsdl:message name="Produtos_AdicionarNaFila_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AdicionarNaFilaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Produtos_ProcessarFila_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessarFila" />
+  </wsdl:message>
+  <wsdl:message name="Produtos_ProcessarFila_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessarFilaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Produtos_ListarProduto_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProduto" />
+  </wsdl:message>
+  <wsdl:message name="Produtos_ListarProduto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListarProdutoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Produtos_Cadastro_InputMessage">
+    <wsdl:part name="parameters" element="tns:Cadastro" />
+  </wsdl:message>
+  <wsdl:message name="Produtos_Cadastro_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CadastroResponse" />
+  </wsdl:message>
+  <wsdl:message name="Produtos_Editar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Editar" />
+  </wsdl:message>
+  <wsdl:message name="Produtos_Editar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Produtos_Deletar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Deletar" />
+  </wsdl:message>
+  <wsdl:message name="Produtos_Deletar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Produtos">
+    <wsdl:operation name="AdicionarNaFila">
+      <wsdl:input wsaw:Action="http://localhost:50115/v1/Produtos/AdicionarNaFila" message="tns:Produtos_AdicionarNaFila_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:50115/v1/Produtos/AdicionarNaFilaResponse" message="tns:Produtos_AdicionarNaFila_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessarFila">
+      <wsdl:input wsaw:Action="http://localhost:50115/v1/Produtos/ProcessarFila" message="tns:Produtos_ProcessarFila_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:50115/v1/Produtos/ProcessarFilaResponse" message="tns:Produtos_ProcessarFila_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListarProduto">
+      <wsdl:input wsaw:Action="http://localhost:50115/v1/Produtos/ListarProduto" message="tns:Produtos_ListarProduto_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:50115/v1/Produtos/ListarProdutoResponse" message="tns:Produtos_ListarProduto_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Cadastro">
+      <wsdl:input wsaw:Action="http://localhost:50115/v1/Produtos/Cadastro" message="tns:Produtos_Cadastro_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:50115/v1/Produtos/CadastroResponse" message="tns:Produtos_Cadastro_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Editar">
+      <wsdl:input wsaw:Action="http://localhost:50115/v1/Produtos/Editar" message="tns:Produtos_Editar_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:50115/v1/Produtos/EditarResponse" message="tns:Produtos_Editar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Deletar">
+      <wsdl:input wsaw:Action="http://localhost:50115/v1/Produtos/Deletar" message="tns:Produtos_Deletar_InputMessage" />
+      <wsdl:output wsaw:Action="http://localhost:50115/v1/Produtos/DeletarResponse" message="tns:Produtos_Deletar_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

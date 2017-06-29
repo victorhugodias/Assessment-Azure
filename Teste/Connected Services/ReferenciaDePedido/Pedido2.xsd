@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://localhost:52679/v2" elementFormDefault="qualified" targetNamespace="http://localhost:52679/v2" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:52679/Pedido.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DomainLoja" />
+  <xs:import schemaLocation="http://localhost:52679/Pedido.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/GerenciarPedido.Modelo" />
+  <xs:element name="SalvarPedido">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DomainLoja" minOccurs="0" name="ListaProdutos" nillable="true" type="q1:ArrayOfProduto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SalvarPedidoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SalvarPedidoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProximoPedido">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProximoPedidoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/GerenciarPedido.Modelo" minOccurs="0" name="ProximoPedidoResult" nillable="true" type="q2:PedidoViewModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PedidoSalvo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPedido" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PedidoSalvoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PedidoSalvoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PedidoEnviado">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idPedido" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PedidoEnviadoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PedidoEnviadoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

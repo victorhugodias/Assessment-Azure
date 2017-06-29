@@ -1,0 +1,1 @@
+C:\Users\Victor\Documents\Visual Studio 2017\Projects\AssessmentAzure\WCFServiceWebRole1\obj\Debug\WCFServiceWebRole1.csprojResolveAssemblyReference.cache
